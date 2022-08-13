@@ -1,0 +1,32 @@
+{
+  "name": "task-manager-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartPYJ/task-manager-node.git"
+  },
+  "keywords": [
+    "nodejs",
+    "task-managger"
+  ],
+  "author": "smartpyj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smartPYJ/task-manager-node/issues"
+  },
+  "homepage": "https://github.com/smartPYJ/task-manager-node#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
