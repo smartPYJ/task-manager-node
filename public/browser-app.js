@@ -4,30 +4,38 @@ const formDOM = document.querySelector('.task-form')
 const taskInputDOM = document.querySelector('.task-input')
 const formAlertDOM = document.querySelector('.form-alert')
 // Load tasks from /api/tasks
+
+
 const showTasks = async () => {
   loadingDOM.style.visibility = 'visible'
   try {
     const {
-      data: { tasks },
+      data: { allTask },
     } = await axios.get('/api/v1/tasks')
-    if (tasks.length < 1) {
+    console.log( axios.get('/api/v1/tasks'));
+    if (allTask.length < 1) {
       tasksDOM.innerHTML = '<h5 class="empty-list">No tasks in your list</h5>'
       loadingDOM.style.visibility = 'hidden'
       return
     }
-    const allTasks = tasks
+    const allTasks = allTask
       .map((task) => {
-        const { completed, _id: taskID, name } = task
+        const { completed, _id, name } = task
         return `<div class="single-task ${completed && 'task-completed'}">
 <h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
 <div class="task-links">
 <!-- edit link -->
-<a href="task.html?id=${taskID}"  class="edit-link">
+<a href="task.html?id=${_id}"  class="edit-link">
 <i class="fas fa-edit"></i>
 </a>
 <!-- delete btn -->
-<button type="button" class="delete-btn" data-id="${taskID}">
+<button type="button" class="delete-btn" data-id="${_id}">
 <i class="fas fa-trash"></i>
+</button>
+
+<!--  complete button -->
+<button type="button" class="complete-btn" data-id="${_id}">
+<i class="fas fa-check"></i>
 </button>
 </div>
 </div>`

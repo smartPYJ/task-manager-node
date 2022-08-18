@@ -43,6 +43,7 @@
   --red-dark: #842029;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
+  
 
   /* typography */
   --headingFont: 'Inconsolata', monospace;
@@ -383,6 +384,7 @@ form > :last-child {
   align-items: center;
   gap: 0 0.5rem;
 }
+.complete-btn,
 .delete-btn,
 .edit-link {
   background: transparent;
@@ -390,13 +392,17 @@ form > :last-child {
   border: transparent;
   cursor: pointer;
 }
+
+
 .edit-link {
   color: var(--green-dark);
 }
 .delete-btn {
   color: var(--red-dark);
 }
-
+.complete-btn {
+  color : var(--primary-700)
+}
 /*************
    SINGLE TASK
 *************/
